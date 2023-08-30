@@ -98,12 +98,20 @@ p.lg {
   @apply px-[5rem];
   margin: auto;
 }
-.b-btn {
-  @apply rounded-[10rem] inline-block;
+
+.b-force div {
+  @apply !bg-transparent;
 }
 
-.b-btn.accent {
- @apply bg-[--accent-100] text-white;
+.b-force input[type="submit"] {
+  @apply !bg-[--accent-100] !px-[3rem] !py-[1.8rem] !h-auto;
+}
+.b-btn, .b-force input[type="button"], .b-force input[type="submit"] {
+  @apply !rounded-[10rem] !inline-block;
+}
+
+.b-btn.accent, .b-force input[type="button"].accent, .b-force input[type="submit"].accent {
+ @apply !bg-[--accent-100] !text-white;
 }
 
 .font-jakarta {
@@ -113,9 +121,9 @@ p.lg {
 .b-btn.sm {
   @apply px-[2.4rem] py-[1.3rem];
 }
-.b-btn.md {
-  @apply px-[3rem] py-[1.8rem];
-  font-size: var(--size-20);
+.b-btn.md, .b-force input[type="button"].md, .b-force input[type="submit"].md {
+  @apply !px-[3rem] !py-[1.8rem];
+  font-size: var(--size-20) !important;
 }
 .b-nav-item {
   @apply px-[1rem] py-[.8rem];
@@ -124,9 +132,9 @@ p.lg {
 .b-nav-item:hover {
   @apply text-[color:var(--accent-100)];
 }
-.b-input {
-  @apply border border-[--grey-50] w-full border-solid rounded-[10rem];
-  @apply placeholder:text-[#232323CC] px-[3rem] py-[1.9rem];
+.b-input, .b-force input[type="text"], .b-force input[type="email"] {
+  @apply !border !border-[--grey-50] !w-full !border-solid !rounded-[10rem];
+  @apply placeholder:!text-[#232323CC] !px-[3rem] !py-[1.9rem];
 }
 .b-st::after {
   content: " ";

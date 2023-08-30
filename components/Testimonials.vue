@@ -24,28 +24,40 @@
 </template>
 
 <script setup lang="ts"> 
-const testimonials = ref([
-  {
-    image: "/img/help.jpeg",
-    title: "John D., CEO, Tizz Company",
-    description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
-  },
-  {
-    image: "/img/help.jpeg",
-    title: "John D., CEO, Tizz Company",
-    description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
-  },
-  {
-    image: "/img/help.jpeg",
-    title: "John D., CEO, Tizz Company",
-    description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
-  },
-  {
-    image: "/img/help.jpeg",
-    title: "John D., CEO, Tizz Company",
-    description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
-  },
-]) 
+import { WizardResponse } from '~/type';
+const props = defineProps<{ data?: WizardResponse }>();
+
+const testimonials = computed(() => {
+  const served = props.data?.agency_wizard.testimonials.map(s => ({
+    description: s.description,
+    image: s.metaImage || "",
+    title: s.name,
+  }))
+
+  return (served || []).length ? served : [
+    {
+      image: "/img/help.jpeg",
+      title: "John D., CEO, Tizz Company",
+      description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
+    },
+    {
+      image: "/img/help.jpeg",
+      title: "John D., CEO, Tizz Company",
+      description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
+    },
+    {
+      image: "/img/help.jpeg",
+      title: "John D., CEO, Tizz Company",
+      description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
+    },
+    {
+      image: "/img/help.jpeg",
+      title: "John D., CEO, Tizz Company",
+      description: "[COMPANY NAME] transformed our online presence, delivering exceptional results. Highly recommended!"
+    },
+  ]
+})
+
 </script>
 
 <style> 

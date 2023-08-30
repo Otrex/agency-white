@@ -42,7 +42,8 @@
 </template>
 
 <script setup lang="ts"> 
-   
+import { WizardResponse } from '~/type';
+defineProps<{ data?: WizardResponse}>()
 </script>
 
 <style> 

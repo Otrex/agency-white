@@ -27,53 +27,64 @@
 </template>
 
 <script setup lang="ts"> 
-const services = ref([
-  {
-    title: "Copywriting",
-    image: "/img/bg1.jpg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Scriptwriting",
-    image: "/img/i1.jpeg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Copywriting",
-    image: "/img/bg1.jpg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Scriptwriting",
-    image: "/img/i1.jpeg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Copywriting",
-    image: "/img/bg1.jpg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Scriptwriting",
-    image: "/img/i1.jpeg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Copywriting",
-    image: "/img/bg1.jpg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Scriptwriting",
-    image: "/img/i1.jpeg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  },
-  {
-    title: "Copywriting",
-    image: "/img/bg1.jpg",
-    description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
-  }
-])
+import { WizardResponse } from '~/type';
+const props = defineProps<{ data?: WizardResponse }>();
+
+const services = computed(() => {
+  const served = props.data?.agency_wizard.services.map(s => ({
+    description: s.description,
+    image: s.metaImage || "",
+    title: s.name,
+  }))
+
+  return (served || []).length ? served : [
+    {
+      title: "Copywriting",
+      image: "/img/bg1.jpg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Scriptwriting",
+      image: "/img/i1.jpeg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Copywriting",
+      image: "/img/bg1.jpg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Scriptwriting",
+      image: "/img/i1.jpeg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Copywriting",
+      image: "/img/bg1.jpg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Scriptwriting",
+      image: "/img/i1.jpeg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Copywriting",
+      image: "/img/bg1.jpg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Scriptwriting",
+      image: "/img/i1.jpeg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    },
+    {
+      title: "Copywriting",
+      image: "/img/bg1.jpg",
+      description: "At [COMPANY NAME], we understand that navigating the complexities of the digital age can be daunting. ",
+    }
+  ]
+})
 </script>
 
 <style> 

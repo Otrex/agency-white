@@ -6,22 +6,29 @@
         <p class="font-jakarta">Fill out your details Below to get a free Consultation.</p>
       </div>
       <div class="w-full">
-        <div class="mb-[2rem]"> 
-          <input class="b-input" placeholder="Full Name" />
-        </div>
-        <div class="mb-[4rem]"> 
-          <input class="b-input" placeholder="Email Address" />
-        </div>
-        <div> 
-          <a class="b-btn md accent">Get Started</a>
-        </div>
+        <div v-html="consult" class="b-force"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts"> 
-   
+import { WizardResponse } from '~/type';
+
+const props = defineProps<{ data?: WizardResponse }>();
+const consult = computed(() => {
+  return props.data?.agency_wizard.leads_collector || `
+    <div class="mb-[2rem]"> 
+      <input class="b-input" placeholder="Full Name" />
+    </div>
+    <div class="mb-[4rem]"> 
+      <input class="b-input" placeholder="Email Address" />
+    </div>
+    <div> 
+      <a class="b-btn md accent">Get Started</a>
+    </div>
+  `
+})
 </script>
 
 <style> 
