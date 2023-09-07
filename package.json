@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "agency-white",
   "private": true,
   "scripts": {
     "build": "nuxt build",
