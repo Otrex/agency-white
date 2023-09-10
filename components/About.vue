@@ -12,7 +12,7 @@
           
           <div v-html="about.description" ></div>
           <div class="mt-[6rem]"> 
-            <a class="b-btn md accent">Contact Us</a>
+            <a href="#consult" class="b-btn md accent">Contact Us</a>
           </div>
         </div>
       </div>

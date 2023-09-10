@@ -3,7 +3,7 @@
     <div class="flex flex-col sm:flex-row pb-[5rem] b-wrapper gap-[2rem]">
       <div class="w-full">
         <div class="max-w-[18rem] max-h-[5rem]"> 
-          <img src="/img/logo-light.svg" class="w-full h-full object-cover" />
+          <img :src="logo" class="w-full h-full object-cover" />
         </div>
       </div>
       <div class="w-full">
@@ -93,6 +93,7 @@
 import { WizardResponse } from '~/type';
 const props = defineProps<{ data?: WizardResponse }>();
 const agencyName = computed(() => props.data?.agency_wizard.website_details.agencyName || "AgencyAI")
+const logo = computed(() => props.data?.agency_wizard.website_details.logo || '/img/logo.svg');
 const footer = computed(() => {
   const address = props.data?.agency_wizard.contact.address.address1 || props.data?.agency_wizard.contact.address.address2 || "48180, Eureka Rd, Taylor, Michigan, USA";
   const city = props.data?.agency_wizard.contact.address.city || "City";
