@@ -1,5 +1,5 @@
 <template> 
-  <div class="py-[10rem]  bg-[#FFF8F8] overflow-hidden"> 
+  <div id="about" class="py-[10rem]  bg-[#FFF8F8] overflow-hidden"> 
     <section class="flex sm:flex-row flex-col relative gap-[4rem] b-wrapper "> 
       <div class="w-full h-full">
         <div class="sm:absolute b-st2 sm:right-[calc(50%_+_2rem)] rounded-tr-[3.8rem] bg-red-400 w-full sm:w-[calc(50vw_-_2rem)]"> 

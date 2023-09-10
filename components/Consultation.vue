@@ -1,5 +1,5 @@
 <template> 
-  <div class="py-[10rem] b-wrapper"> 
+  <div id="consult" class="py-[10rem] b-wrapper"> 
     <div class="max-w-[100rem] flex-col sm:flex-row rounded-[3.6rem] mx-auto border border-[--grey-50] px-[5.5rem] py-[5.1rem] border-solid bg-[--grey-60] flex gap-[3rem]">
       <div class="flex w-full flex-col max-w-[41rem] gap-[2rem]">
         <h2>Get Free Consultation</h2>

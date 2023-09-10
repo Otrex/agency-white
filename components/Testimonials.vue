@@ -1,5 +1,5 @@
 <template> 
-  <div class="bg-[#311515] text-white py-[14rem]"> 
+  <div id="testimonials" class="bg-[#311515] text-white py-[14rem]"> 
     <div >
       <h2 class="text-white text-center mb-[6.4rem]">What Our Partners Are saying</h2>
 

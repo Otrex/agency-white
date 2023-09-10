@@ -1,5 +1,5 @@
 <template> 
-<div class="b-wrapper"> 
+<div id="hero" class="b-wrapper"> 
   <div class="pt-[9rem]"> 
     <h1 class="text-center max-w-[106rem] m-auto mb-[2rem]">{{ hero.headline }}</h1>
     <p class="font-jakarta text-center lg max-w-[106rem] m-auto">{{ hero.subHeadline }}</p>
