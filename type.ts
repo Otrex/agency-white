@@ -91,7 +91,7 @@ export interface WebsiteDetails {
   agencyName: string;
   contactNotification: string;
   url: string;
-  customJavascript: null;
+  customJavascript: string;
   logo: string;
   favIcon: string;
 }

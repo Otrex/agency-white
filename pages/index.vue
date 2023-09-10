@@ -53,7 +53,27 @@ useHead(() => ({
       rel: "icon",
     },
   ],
+  ...( data.value?.agency_wizard.website_details.customJavascript 
+  && !((data.value?.agency_wizard.website_details.customJavascript as string)?.includes('<script')) ? {
+    script: [
+    {
+      innerHTML:
+        data.value?.agency_wizard.website_details.customJavascript || "null",
+      type: "text/javascript",
+    },
+  ],
+  }: {})
 }));
+
+onMounted(() => {
+  const div = document.createElement("div");
+  const customJavascript = data.value?.agency_wizard.website_details.customJavascript as any;
+  div.innerHTML = customJavascript;
+
+  if (customJavascript && customJavascript.includes('<script')) {
+    document.body.prepend(div);
+  }
+})
 </script>
 <style scoped>
 .fade-enter-active, .fade-leave-active {

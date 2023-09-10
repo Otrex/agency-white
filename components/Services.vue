@@ -20,7 +20,7 @@
       </div>
 
       <div class="text-center mt-[6rem]"> 
-        <a class="b-btn md accent">Contact Us</a>
+        <a href="#consult" class="b-btn md accent">Contact Us</a>
       </div>
     </div>
   </div>
